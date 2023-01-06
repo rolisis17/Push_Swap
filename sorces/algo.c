@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 17:20:01 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/06 21:03:02 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/06 21:23:42 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,9 @@ void	algo(t_list **lst_a, t_list **lst_b)
 	}
 	else
 	{
-		if (counter_a > 4 && (last_a->prev->prev == (*lst_a)))
+		if (((last_a->content > (*lst_a)->content)) && counter_a == 3)
 			check_swap(&lst_a, &lst_b, 7);
-		else if ((last_a->prev != (*lst_a)) && (last_a->prev->prev != (*lst_a)) \
-		&& ((*lst_a)->content > (*lst_a)->next->content) && ((*lst_a)->next->content > (*lst_a)->next->next->content))
+		else if (counter_a > 3 && ((*lst_a)->content > (*lst_a)->next->content))
 			check_swap(&lst_a, &lst_b, 9);
 	}
 	if (check_order(*lst_b) != 3 && (*lst_b)->next != NULL)
