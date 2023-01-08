@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 16:08:58 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/06 20:25:58 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/07 13:02:25 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ int		check_args(char **str);
 int		check_order(t_list	*lst);
 
 int		check_order_b(t_list	*lst);
+
+int		check_bigger(t_list *lst);
 
 void	extract_number(t_list **lst, char **av);
 

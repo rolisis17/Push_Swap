@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:21:41 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/06 20:24:35 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/07 13:18:22 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int		check_order_b(t_list	*lst)
 	while ((lst)->next != NULL)
 	{
 		if ((lst)->content < (lst)->next->content)
-		 	return (0);
+			return (0);
 		lst = lst->next;
 	}
 	return (1);

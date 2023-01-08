@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 17:20:01 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/06 21:23:42 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/08 13:38:39 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,20 +36,28 @@ void	algo(t_list **lst_a, t_list **lst_b)
 	if ((*lst_a)->content > (*lst_a)->next->content)
 	{
 		if (last_a->content < (*lst_a)->content)
-		{
 			check_swap(&lst_a, &lst_b, 5);
-			if (counter_a > 4 && (((*lst_a)->content < (*lst_a)->next->content) && ((*lst_a)->content < (*lst_a)->next->next->content) && check_order(*lst_a) == 0))
-				check_swap(&lst_a, &lst_b, 9);
-		}	
 		else
 			check_swap(&lst_a, &lst_b, 3);
 	}
 	else
 	{
-		if (((last_a->content > (*lst_a)->content)) && counter_a == 3)
+		if (check_bigger(last_a) == 3)
 			check_swap(&lst_a, &lst_b, 7);
-		else if (counter_a > 3 && ((*lst_a)->content > (*lst_a)->next->content))
+		// else if (counter_a > 3)
+		// 	check_swap(&lst_a, &lst_b, 9);
+		else if (check_bigger(last_a) == 4)
+			check_swap(&lst_a, &lst_b, 5);
+		else if (counter_a > 3 && check_bigger(last_a) < 3)
+		{
 			check_swap(&lst_a, &lst_b, 9);
+			check_swap(&lst_a, &lst_b, 9);
+			check_swap(&lst_a, &lst_b, 3);
+			check_swap(&lst_b, &lst_a, 10);
+			check_swap(&lst_b, &lst_a, 10);
+		}
+		else if (check_bigger(*lst_a) == 1)
+			check_swap(&lst_a, &lst_b, 3);
 	}
 	if (check_order(*lst_b) != 3 && (*lst_b)->next != NULL)
 	{
@@ -68,4 +76,32 @@ void	algo(t_list **lst_a, t_list **lst_b)
 				check_swap(&lst_b, &lst_a, 10);
 		}
 	}
+}
+
+
+int	check_bigger(t_list *lst)
+{
+	t_list	*temp;
+	int	f;
+
+	f = 1;
+	if (lst->next != NULL)
+	{
+		temp = (lst)->next;
+		while (((lst)->content > temp->content) && (temp->next != NULL))
+		{
+			f++;
+			temp = temp->next;
+		}
+	}
+	else
+	{
+		temp = (lst)->prev;
+		while ((lst->content < temp->content) && (temp->prev != NULL))
+		{
+			f++;
+			temp = temp->prev;
+		}
+	}
+	return (f);
 }
