@@ -1,4 +1,4 @@
-SRCS_FILES = PushSwap.c Parse.c fuck.c Swap.c CheckSwap.c Printlst.c algo.c #CheckSwap.c
+SRCS_FILES = PushSwap.c Parse.c fuck.c Swap.c CheckSwap.c Printlst.c algo.c algoii.c check_algo.c #CheckSwap.c
 SRCS = $(addprefix $(SRCS_PATH), $(SRCS_FILES))
 SRCS_PATH = ./sorces/
 CC = cc

@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 12:14:05 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/06 19:51:06 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/09 13:55:45 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,9 @@ int	main(int ac, char **av)
 		if (check_doubles(lst_a) == 0)
 			return (write(1, "Error", 5));
 		print_lst(lst_a, lst_b);
-		//write(1, "-----\n", 6);
 		while (!(check_order(lst_a)) || check_order(lst_b) != 3)
 			algo(&lst_a, &lst_b);
-		//check_swap(&lst_a, &lst_b, 3);
-		//check_swap(&lst_a, &lst_b, 4);
-		// check_swap(&lst_a, &lst_b, 7);
-		// check_swap(&lst_a, &lst_b, 9);
-		// check_swap(&lst_a, &lst_b, 10);
-		// check_swap(&lst_a, &lst_b, 7);
-		// check_swap(&lst_b, &lst_a, 4);
-		// check_swap(&lst_a, &lst_b, 3);
+		check_swap(NULL, NULL, 0);
 		print_lst(lst_a, lst_b);
 	}
 	free_lst(&lst_a);

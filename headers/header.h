@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 16:08:58 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/07 13:02:25 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/10 15:06:22 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,12 @@ int		check_order_b(t_list	*lst);
 
 int		check_bigger(t_list *lst);
 
+int		check_lower(t_list *lst);
+
+int		check_half(t_list *lst);
+
+int		count_lst(t_list *lst);
+
 void	extract_number(t_list **lst, char **av);
 
 void	*ft_calloc(size_t nmemb, size_t size);
@@ -68,5 +74,11 @@ void	swap_ab(t_list *****lst_a, t_list *****lst_b);
 void	free_lst(t_list **lst);
 
 void	algo(t_list **lst_a, t_list **lst_b);
+
+int		lessthanseven(t_list *lst_a, int counter_a);
+
+int		lessthanthree(t_list *lst_a);
+
+t_list	*get_last(t_list *lst_a);
 
 #endif

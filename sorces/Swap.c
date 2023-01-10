@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 16:38:49 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/06 12:30:00 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/09 20:17:20 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,10 @@ void	swap_rotate(t_list ****lst)
 	while (last->next != NULL)
 		last = last->next;
 	second = (***lst)->next;
+	second->prev = NULL;
 	head = (***lst);
 	head->next = NULL;
+	head->prev = last;
 	last->next = head;
 	(***lst) = second;
 }
@@ -71,6 +73,7 @@ void	swap_reverse(t_list ****lst)
 	previous = last->prev;
 	head = (***lst);
 	last->next = head;
+	head->prev = last;
 	previous->next = NULL;
 	(***lst) = last;
 }
