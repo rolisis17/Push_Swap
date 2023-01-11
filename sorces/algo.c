@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 17:20:01 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/10 16:26:01 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/11 13:47:18 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,17 @@
 void	algo(t_list **lst_a, t_list **lst_b)
 {
 	t_list	*last_a;
-	// t_list	*last_b;
 	int	counter_a;
-	// int	counter_b;
+	int pos;
 
+	last_a = (*lst_a);
+	while (last_a)
+	{
+		pos = last_a->pos;
+		last_a = last_a->next;
+	}
 	counter_a = count_lst(*lst_a);
-	// counter_b = count_lst(*lst_b);
-	last_a = get_last(*lst_a);
-	// if (*lst_b)
-	// 	last_b = get_last(*lst_b);
+	// last_a = get_last(*lst_a);
 	if (*lst_b && check_order(*lst_a) && check_order_b(*lst_b))
 	{
 		check_swap(&lst_b, &lst_a, 10);

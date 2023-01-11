@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 12:14:05 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/09 13:55:45 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/11 13:40:46 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	main(int ac, char **av)
 		if (is_nbr(av) == 0)
 			return (0);
 		extract_number(&lst_a, av);
+		put_pos(lst_a);
 		if (check_doubles(lst_a) == 0)
 			return (write(1, "Error", 5));
 		print_lst(lst_a, lst_b);

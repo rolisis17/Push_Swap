@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 16:16:12 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/10 16:16:58 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/11 13:52:06 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,30 @@ int	check_half(t_list *lst)
 		lst = lst->next;
 	}
 	return (f);
+}
+
+void	put_pos(t_list *lst)
+{
+	t_list	*temp;
+	t_list	*search;
+	int		f;
+	int		count;
+	
+	f = 0;
+	count = 0;
+	temp = lst;
+	search = lst;
+	while (temp != NULL)
+	{
+		while (search != NULL)
+		{
+			if (search->content < temp->content)
+				count++;
+			search = search->next;
+		}
+		temp->pos = count;
+		temp = temp->next;
+		search = lst;
+		count = 0;
+	}
 }

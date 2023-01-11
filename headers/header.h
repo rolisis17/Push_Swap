@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 16:08:58 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/10 15:06:22 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/11 13:43:08 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 typedef struct s_list
 {
 	int				content;
+	int				pos;
 	struct s_list	*prev;
 	struct s_list	*next;
 }					t_list;
@@ -48,6 +49,8 @@ int		check_lower(t_list *lst);
 int		check_half(t_list *lst);
 
 int		count_lst(t_list *lst);
+
+void	put_pos(t_list *lst);
 
 void	extract_number(t_list **lst, char **av);
 
