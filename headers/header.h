@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 16:08:58 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/11 13:43:08 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/12 16:18:17 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,8 @@ void	algo(t_list **lst_a, t_list **lst_b);
 int		lessthanseven(t_list *lst_a, int counter_a);
 
 int		lessthanthree(t_list *lst_a);
+
+int		b3(t_list *lst_b);
 
 t_list	*get_last(t_list *lst_a);
 

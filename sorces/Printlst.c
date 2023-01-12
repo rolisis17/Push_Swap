@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 17:46:13 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/06 17:59:29 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/12 16:18:13 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ void	show_mov(int keep)
 	else if (keep == 8)
 		write (1, "rrb\n", 4);
 	else if (keep == 9)
-		write (1, "pa\n", 4);
-	else if (keep == 10)
 		write (1, "pb\n", 4);
+	else if (keep == 10)
+		write (1, "pa\n", 4);
 }
 
 void	print_lst(t_list *lst_a, t_list *lst_b)

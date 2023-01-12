@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 12:14:05 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/11 13:40:46 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/11 19:33:40 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ int	main(int ac, char **av)
 		put_pos(lst_a);
 		if (check_doubles(lst_a) == 0)
 			return (write(1, "Error", 5));
-		print_lst(lst_a, lst_b);
+		//print_lst(lst_a, lst_b);
 		while (!(check_order(lst_a)) || check_order(lst_b) != 3)
 			algo(&lst_a, &lst_b);
 		check_swap(NULL, NULL, 0);
-		print_lst(lst_a, lst_b);
+		//print_lst(lst_a, lst_b);
 	}
 	free_lst(&lst_a);
 	return (0);
@@ -88,9 +88,9 @@ void	new_node(t_list ***lst, int nbr)
 	}
 	else
 		(**lst) = new;
-	printf("next content: %d\n", new->content);
-	if (last != NULL)
-		printf("previous cont: %d\n", last->content);
+	//printf("next content: %d\n", new->content);
+	//if (last != NULL)
+	//	printf("previous cont: %d\n", last->content);
 }
 
 void	free_lst(t_list **lst)

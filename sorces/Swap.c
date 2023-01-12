@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 16:38:49 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/09 20:17:20 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/11 16:07:17 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ void	swap_top(t_list ****lst)
 	temp = last->content;
 	last->content = prev->content;
 	prev->content = temp;
+	temp = last->pos;
+	last->pos = prev->pos;
+	prev->pos = temp;
 }
 
 /*ra (rotate a): Shift up all elements of stack a by 1.
