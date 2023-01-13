@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:21:41 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/11 14:42:10 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/13 17:01:57 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	check_swap(t_list ***lst_a, t_list ***lst_b, int swap)
 		keep = check_swapii(&lst_a, &lst_b, swap, keep);
 }
 
-int		check_order(t_list	*lst)
+int	check_order(t_list	*lst)
 {
 	if (!lst)
 		return (3);
@@ -63,7 +63,7 @@ int		check_order(t_list	*lst)
 	return (1);
 }
 
-int		check_order_b(t_list	*lst)
+int	check_order_b(t_list	*lst)
 {
 	while ((lst)->next != NULL)
 	{
@@ -72,4 +72,15 @@ int		check_order_b(t_list	*lst)
 		lst = lst->next;
 	}
 	return (1);
+}
+
+int	check_pos(t_list *lst, int counter)
+{
+	while (lst)
+	{
+		if (lst->pos <= (counter/2))
+			return (1);
+		lst = lst->next;
+	}
+	return (0);
 }

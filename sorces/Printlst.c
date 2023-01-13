@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 17:46:13 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/12 16:18:13 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/13 17:17:26 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	to_print(int keep, int swap)
 	if (swap == 4 || swap == 3)
 	{
 		if ((keep == 3 || keep == 4) && swap != keep)
-			return (write(1, "ss\n", 4) - 4);
+			return (write(1, "ss\n", 3) - 3);
 		else
 			show_mov(keep);
 		keep = swap;
@@ -46,7 +46,7 @@ int	to_print(int keep, int swap)
 	else if (swap == 5 || swap == 6)
 	{
 		if ((keep == 5 || keep == 6) && swap != keep)
-			return (write(1, "rr\n", 4) - 4);
+			return (write(1, "rr\n", 3) - 3);
 		else
 			show_mov(keep);
 		keep = swap;
@@ -62,21 +62,21 @@ void	show_mov(int keep)
 	if (keep == 0)
 		return ;
 	else if (keep == 3)
-		write (1, "sa\n", 4);
+		write (1, "sa\n", 3);
 	else if (keep == 4)
-		write (1, "sb\n", 4);
+		write (1, "sb\n", 3);
 	else if (keep == 5)
-		write (1, "ra\n", 4);
+		write (1, "ra\n", 3);
 	else if (keep == 6)
-		write (1, "rb\n", 4);
+		write (1, "rb\n", 3);
 	else if (keep == 7)
 		write (1, "rra\n", 4);
 	else if (keep == 8)
 		write (1, "rrb\n", 4);
 	else if (keep == 9)
-		write (1, "pb\n", 4);
+		write (1, "pb\n", 3);
 	else if (keep == 10)
-		write (1, "pa\n", 4);
+		write (1, "pa\n", 3);
 }
 
 void	print_lst(t_list *lst_a, t_list *lst_b)

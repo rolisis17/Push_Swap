@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 16:16:12 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/11 19:05:02 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/13 17:33:07 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,15 @@ t_list	*get_last(t_list *lst_a)
 	return (last_a);
 }
 
-int	check_bigger(t_list *lst)
+int	check_bigger(t_list *lst, t_list *temp)
 {
-	t_list	*temp;
 	int	f;
 
 	f = 1;
-	if (lst->next != NULL)
+	if (lst != NULL)
 	{
-		temp = (lst)->next;
+		if (!temp && (lst->next != NULL))
+			temp = (lst)->next;
 		while (((temp != NULL) && (lst)->content > temp->content))
 		{
 			f++;
