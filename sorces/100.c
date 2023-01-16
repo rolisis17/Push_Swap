@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 14:09:47 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/13 19:27:06 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/16 14:08:18 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	upto100partiii(t_list *lst_a, t_list *lst_b, int counter)
 	t_list	*last_b;
 	int		posAB;
 
-	posAB = check_bigger(lst_b, lst_a);
+	posAB = check_pos(lst_b, lst_a);
 	last_b = get_last(lst_b);
 	if ((lst_b->pos > lst_b->next->pos) && (lst_b->pos > last_b->pos) \
 	&& (posAB == 1))
@@ -67,9 +67,27 @@ int	upto100partiii(t_list *lst_a, t_list *lst_b, int counter)
 		return (6);
 	else if (last_b->pos > lst_b->pos)
 		return (8);
+	//else if (posAB == counter)
 	else if (posAB > (counter/2))
 		return (7);
 	else if (posAB < (counter/2))
 		return (5);
 	return (0);
+}
+
+int	check_pos(t_list *lst_b, t_list *lst_a)
+{
+	t_list	*temp;
+	int		count;
+
+	count = 0;
+	temp = lst_a;
+	while (temp)
+	{
+		count++;
+		if (lst_b < temp)
+			break;
+		temp = temp->next;	
+	}
+	return (count);
 }

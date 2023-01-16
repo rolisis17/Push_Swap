@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:21:41 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/13 17:01:57 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/16 13:40:28 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	check_order_b(t_list	*lst)
 	return (1);
 }
 
-int	check_pos(t_list *lst, int counter)
+int	check_stacks(t_list *lst, int counter)
 {
 	while (lst)
 	{

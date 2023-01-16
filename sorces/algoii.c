@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 16:14:03 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/13 19:56:26 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/16 13:40:52 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ int	morethansix(t_list *lst_a, t_list *lst_b, int counter_a, int counter_b, int 
 		return (upto100partiii(lst_a, lst_b, counter_a));
 	else if (counter_a > 3)
 		return (upto100partii(lst_a, counter_a));
-	else if (check_pos(lst_a, counter_a + counter_b))
+	else if (check_stacks(lst_a, counter_a + counter_b))
 		return (upto100parti(lst_a, counter_a + counter_b));
 	
 	return (0);

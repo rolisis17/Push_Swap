@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 16:08:58 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/13 19:56:03 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/16 13:41:35 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,11 @@ int		check_lower(t_list *lst);
 
 int		check_half(t_list *lst);
 
-int		check_pos(t_list *lst, int counter);
+int		check_stacks(t_list *lst, int counter);
 
 int		count_lst(t_list *lst);
+
+int		check_pos(t_list *lst_b, t_list *lst_a);
 
 void	put_pos(t_list *lst);
 
