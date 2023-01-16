@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 12:14:05 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/11 19:33:40 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/16 20:07:49 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(int ac, char **av)
 			return (write(1, "Error", 5));
 		//print_lst(lst_a, lst_b);
 		while (!(check_order(lst_a)) || check_order(lst_b) != 3)
-			algo(&lst_a, &lst_b);
+			algo1(&lst_a, &lst_b);
 		check_swap(NULL, NULL, 0);
 		//print_lst(lst_a, lst_b);
 	}

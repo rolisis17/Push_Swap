@@ -6,13 +6,13 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 17:20:01 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/16 12:44:39 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/16 20:07:55 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/header.h"
 
-void	algo(t_list **lst_a, t_list **lst_b)
+void	algo1(t_list **lst_a, t_list **lst_b)
 {
 	t_list	*last_a;
 	int	counter_a;
@@ -33,10 +33,10 @@ void	algo(t_list **lst_a, t_list **lst_b)
 	else if (counter_a > 3 && counter < 7)
 		check_swap(&lst_a, &lst_b, lessthanseven(*lst_a, counter_a, counter));
 	else
-		algoii(*(&lst_a), *(&lst_b), counter_a, counter_b);
+		algo2(*(&lst_a), *(&lst_b), counter_a, counter_b);
 }
 
-void algoii(t_list **lst_a, t_list **lst_b, int counter_a, int counter_b)
+void algo2(t_list **lst_a, t_list **lst_b, int counter_a, int counter_b)
 {
 	int	res;
 	int	counter;

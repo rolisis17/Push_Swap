@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 16:08:58 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/16 13:41:35 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/16 20:41:54 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ int		check_order_b(t_list	*lst);
 
 int		check_bigger(t_list *lst, t_list *temp);
 
-int		check_lower(t_list *lst);
-
 int		check_half(t_list *lst);
 
 int		check_stacks(t_list *lst, int counter);
+
+int		check_lowest(t_list *lst_b, t_list *lst_a);
 
 int		count_lst(t_list *lst);
 
@@ -80,9 +80,9 @@ void	swap_ab(t_list *****lst_a, t_list *****lst_b);
 
 void	free_lst(t_list **lst);
 
-void	algo(t_list **lst_a, t_list **lst_b);
+void	algo1(t_list **lst_a, t_list **lst_b);
 
-void	algoii(t_list **lst_a, t_list **lst_b, int counter_a, int counter_b);
+void	algo2(t_list **lst_a, t_list **lst_b, int counter_a, int counter_b);
 
 int		lessthanseven(t_list *lst_a, int counter_a, int counter);
 
@@ -93,11 +93,13 @@ int		lessthanthree(t_list *lst_a);
 
 int		b3(t_list *lst_b);
 
-int		upto100parti(t_list *lst, int counter);
+int		upto100parti(int pos, int counter);
 
 int		upto100partii(t_list *lst, int counter);
 
 int		upto100partiii(t_list *lst_a, t_list *lst_b, int counter);
+
+int		upto100partiv(t_list *lst_a, int counter);
 
 t_list	*get_last(t_list *lst_a);
 

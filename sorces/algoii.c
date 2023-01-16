@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 16:14:03 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/16 13:40:52 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/16 20:41:16 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	lessthanthree(t_list *lst_a)
 		if (bigger == 1)
 			return (7);
 		else
-			return (3);
+			return (5);
 	}
 	return (0);
 }
@@ -94,11 +94,16 @@ int	lessthanseven(t_list *lst_a, int counter_a, int counter)
 int	morethansix(t_list *lst_a, t_list *lst_b, int counter_a, int counter_b, int laststep)
 {
 	if (laststep == 1)
-		return (upto100partiii(lst_a, lst_b, counter_a));
+	{
+		if (lst_b)
+			return (upto100partiii(lst_a, lst_b, counter_a));
+		else
+			return (upto100partiv(lst_a, counter_a));
+	}
 	else if (counter_a > 3)
 		return (upto100partii(lst_a, counter_a));
 	else if (check_stacks(lst_a, counter_a + counter_b))
-		return (upto100parti(lst_a, counter_a + counter_b));
-	
+		return (upto100parti(lst_a->pos, counter_a + counter_b));
+
 	return (0);
 }
