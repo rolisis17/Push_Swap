@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 17:46:13 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/13 17:17:26 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/17 18:44:38 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,11 +81,6 @@ void	show_mov(int keep)
 
 void	print_lst(t_list *lst_a, t_list *lst_b)
 {
-	int	bcont;
-	int	acont;
-
-	acont = 0;
-	bcont = 0;
 	if (check_order(lst_a))
 	{
 		printf("------\n");

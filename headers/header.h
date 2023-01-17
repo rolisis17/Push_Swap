@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 16:08:58 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/16 20:41:54 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/17 20:33:34 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ int		count_lst(t_list *lst);
 
 int		check_pos(t_list *lst_b, t_list *lst_a);
 
+int		findlowestbeforerotate(t_list *lst);
+
 void	put_pos(t_list *lst);
 
 void	extract_number(t_list **lst, char **av);
@@ -86,20 +88,24 @@ void	algo2(t_list **lst_a, t_list **lst_b, int counter_a, int counter_b);
 
 int		lessthanseven(t_list *lst_a, int counter_a, int counter);
 
-int		morethansix(t_list *lst_a, t_list *lst_b, int counter_a,\
+int		morethansix(t_list **lst_a, t_list **lst_b, int counter_a,\
 int counter_b, int laststep);
 
 int		lessthanthree(t_list *lst_a);
 
 int		b3(t_list *lst_b);
 
-int		upto100parti(int pos, int counter);
+int		upto100parti(t_list *lst, int counter);
 
 int		upto100partii(t_list *lst, int counter);
 
 int		upto100partiii(t_list *lst_a, t_list *lst_b, int counter);
 
 int		upto100partiv(t_list *lst_a, int counter);
+
+int		pleasework(t_list **lst_a, t_list **lst_b, int counter_a);
+
+int		choose_rotate(int nbr, int counter_a);
 
 t_list	*get_last(t_list *lst_a);
 

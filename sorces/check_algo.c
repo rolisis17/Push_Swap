@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 16:16:12 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/13 17:33:07 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/17 18:45:28 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,10 +83,8 @@ void	put_pos(t_list *lst)
 {
 	t_list	*temp;
 	t_list	*search;
-	int		f;
 	int		count;
 	
-	f = 0;
 	count = 0;
 	temp = lst;
 	search = lst;

@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 17:20:01 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/16 20:07:55 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/17 19:34:14 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,19 @@ void	algo1(t_list **lst_a, t_list **lst_b)
 	int	counter_a;
 	int	counter_b;
 	int	counter;
+	int	poss;
 
+	last_a = *lst_a;
+	while (last_a)
+	{
+		poss = last_a->pos;
+		last_a = last_a->next;
+	}
 	counter_a = count_lst(*lst_a);
 	counter_b = count_lst(*lst_b);
 	counter = counter_a + counter_b;
 	last_a = get_last(*lst_a);
-	if (*lst_b && check_order(*lst_a) && check_order_b(*lst_b))
+	if (*lst_b && check_order(*lst_a) && check_order_b(*lst_b) && counter < 7)
 	{
 		check_swap(&lst_b, &lst_a, 10);
 		if (!check_order(*lst_a))
@@ -59,7 +66,7 @@ void algo2(t_list **lst_a, t_list **lst_b, int counter_a, int counter_b)
 				check_swap(&lst_a, &lst_b, lessthanthree(*lst_a));
 			laststep = 1;
 		}
-		res = morethansix(*lst_a, *lst_b, counter_a, counter_b, laststep);
+		res = morethansix(*(&lst_a), *(&lst_b), counter_a, counter_b, laststep);
 		if (res%2 == 0)
 			check_swap(&lst_b, &lst_a, res);
 		else
