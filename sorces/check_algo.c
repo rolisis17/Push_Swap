@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 16:16:12 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/17 18:45:28 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/19 13:51:39 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,15 @@ t_list	*get_last(t_list *lst_a)
 	t_list	*last_a;
 	
 	last_a = lst_a;
-	while (last_a->next != NULL)
-		last_a = last_a->next;
+	// if ()
+	// 	return (l)
+	while (last_a != NULL)
+	{
+		if (last_a->next != NULL)
+			last_a = last_a->next;
+		else
+			break ;
+	}
 	return (last_a);
 }
 
@@ -88,13 +95,16 @@ void	put_pos(t_list *lst)
 	count = 0;
 	temp = lst;
 	search = lst;
-	while (temp != NULL)
+	while (temp)
 	{
-		while (search != NULL)
+		while (search)
 		{
 			if (search->content < temp->content)
 				count++;
-			search = search->next;
+			if (search->next != NULL)
+				search = search->next;
+			else
+				break;
 		}
 		temp->pos = count + 1;
 		temp = temp->next;

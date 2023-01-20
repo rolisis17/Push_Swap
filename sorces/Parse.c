@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 12:10:10 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/05 17:45:36 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/19 15:33:20 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ int	is_nbr(char **str)
 		while (str[starter.f][++starter.u])
 			if ((str[starter.f][starter.u] < 48) \
 			|| (str[starter.f][starter.u] > 57))
+			{
 				return (0);
+				
+			}
 		starter.u = -1;
 	}
 	return (1);
@@ -38,8 +41,10 @@ int	check_doubles(t_list *lst)
 	t_list	*prox;
 
 	last = lst;
-	while (last->next != NULL)
+	while (last != NULL)
 	{
+		if (last->next == NULL)
+			return (1);
 		prox = last->next;
 		while (prox != NULL)
 		{
@@ -50,4 +55,17 @@ int	check_doubles(t_list *lst)
 		last = last->next;
 	}
 	return (1);
+}
+
+int	check_intmax(long nbr)
+{
+	if (nbr > INT_MAX || nbr < INT_MIN)
+		return (0);
+	else
+		return (1);
+}
+
+int	error_printer(void)
+{
+	return (write (2, "Error\n", 6));
 }

@@ -4,7 +4,7 @@ SRCS = $(addprefix $(SRCS_PATH), $(SRCS_FILES))
 SRCS_PATH = ./sorces/
 CC = cc
 NAME = push_swap
-CFLAGS = -g #-Wall -Wextra -Werror  #-fsanitize=address
+CFLAGS = -g -Wall -Wextra -Werror #-fsanitize=address
 RM = rm -rf
 
 # Reset

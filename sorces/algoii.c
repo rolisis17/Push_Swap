@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 16:14:03 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/17 20:40:14 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/19 19:56:23 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,15 +95,14 @@ int	morethansix(t_list **lst_a, t_list **lst_b, int counter_a, int counter_b, in
 {
 	if (laststep == 1)
 	{
-		if (lst_b)
-			return (pleasework(*(&lst_a), *(&lst_b), counter_a));
+		if (*lst_b)
+			return (upto100partiii(*(&lst_a), *(&lst_b), counter_a));
 		else
 			return (upto100partiv(*(lst_a), counter_a));
 	}
 	else if (check_stacks(*(lst_a), counter_a + counter_b))
-		return (upto100parti((*lst_a), counter_a + counter_b));
+		return (upto100parti((*lst_a), (*lst_b), counter_a + counter_b));
 	else if (counter_a > 3)
-		return (upto100partii(*(lst_a), counter_a));
-
+		return (upto100partii(*(lst_a), *(lst_b)));
 	return (0);
 }

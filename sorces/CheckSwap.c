@@ -6,23 +6,23 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:21:41 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/16 13:40:28 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/19 13:57:35 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/header.h"
 
-static int	check_swapii(t_list ****lst_a, t_list ****lst_b, int swap, int keep)
+static int	check_swapii(t_list **lst_a, t_list **lst_b, int swap, int keep)
 {
 	if (swap == 9 || swap == 10)
 	{
-		swap_ab(&lst_a, &lst_b);
+		swap_ab(lst_a, lst_b);
 		return (to_print(keep, swap));
 	}
 	return (0);
 }
 
-void	check_swap(t_list ***lst_a, t_list ***lst_b, int swap)
+void	check_swap(t_list **lst_a, t_list **lst_b, int swap)
 {
 	static int	keep;
 
@@ -33,21 +33,21 @@ void	check_swap(t_list ***lst_a, t_list ***lst_b, int swap)
 	}
 	else if (swap == 3 || swap == 4)
 	{
-		swap_top(&lst_a);
+		swap_top(lst_a);
 		keep = to_print(keep, swap);
 	}
 	else if (swap == 5 || swap == 6)
 	{
-		swap_rotate(&lst_a);
+		swap_rotate(lst_a);
 		keep = to_print(keep, swap);
 	}
 	else if (swap == 7 || swap == 8)
 	{
-		swap_reverse(&lst_a);
+		swap_reverse(lst_a);
 		keep = to_print(keep, swap);
 	}
 	else if (swap > 8)
-		keep = check_swapii(&lst_a, &lst_b, swap, keep);
+		keep = check_swapii(lst_a, lst_b, swap, keep);
 }
 
 int	check_order(t_list	*lst)
