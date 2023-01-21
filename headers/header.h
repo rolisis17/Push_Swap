@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 16:08:58 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/20 13:11:40 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/21 20:46:01 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <stddef.h>
 # include <limits.h>
+# include <math.h>
 
 typedef struct s_list
 {
@@ -93,8 +94,7 @@ void	algo2(t_list **lst_a, t_list **lst_b, int counter_a, int counter_b);
 
 int		lessthanseven(t_list *lst_a, int counter_a, int counter);
 
-int		morethansix(t_list **lst_a, t_list **lst_b, int counter_a,\
-int counter_b, int laststep);
+int		morethansix(t_list **lst_a, t_list **lst_b, int laststep);
 
 int		lessthanthree(t_list *lst_a);
 
@@ -125,6 +125,8 @@ int		talowerfinder(t_list *lst_a, int pos);
 int		tacountnbrposition(t_list *lst_a, int nbr);
 
 int		taclosesposition(t_list **lst_a, t_list **lst_b, int a);
+
+int		distancetohead(int pos, int counter);
 
 t_list	*tacloses(t_list **lst_b, int counter);
 

@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:21:41 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/19 13:57:35 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/21 16:14:49 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	check_swap(t_list **lst_a, t_list **lst_b, int swap)
 	static int	keep;
 
 	if (swap == 0)
+		return ;
+	if (swap == -1)
 	{
 		show_mov(keep);
 		keep = 0;

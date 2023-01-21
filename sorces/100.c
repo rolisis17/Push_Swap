@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 14:09:47 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/20 18:25:40 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/21 20:57:43 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,9 @@ int	upto100partii(t_list *lst_a, t_list *lst_b)
 	if (count_lst(lst_b) > 4 && keep == 0)
 	{
 		keep = 1;
-		return (upto100partiib(lst_b));
 		if (count_lst(lst_b) == 3)
-			b3(lst_b);
+			return (b3(lst_b));
+		return (upto100partiib(lst_b));
 	}
 	else
 		keep = 0;
@@ -119,7 +119,6 @@ int	upto100partiia(t_list *lst, int counter)
 int	upto100partiib(t_list *lst)
 {
 	t_list	*head;
-	static int keep;
 	int		next;
 	int		last;
 	int		pos;
@@ -130,65 +129,76 @@ int	upto100partiib(t_list *lst)
 	last = get_last(lst)->pos;
 	if (next > pos)
 		return (4);
-	if (pos < next)
-	{
-		keep += 1;
-		return (6);
-	}
 	if (pos < last)
 		return (6);
 	else
+		return (0);
+}
+
+int	rotatebchecker(t_list **lst_b, int pos)
+{
+	if (pos != 0)
 	{
-		if (keep > 0)
+		if (pos < 0)
 		{
-			keep -= 1;
-			return (8);
+			check_swap(lst_b, NULL, 8);
+			return (pos + 1);
 		}
 		else
-			return (0);
+		{
+			check_swap(lst_b, NULL, 6);
+			return (pos - 1);
+		}
 	}
+	return (0);
 }
 
 int	upto100partiii(t_list **lst_a, t_list **lst_b, int counter_a)
 {
-	t_list		*temp;
-	static int 	rotateb;
-	int			counter;
-	int			nbr;
+	static t_list	*temp;
+	static int	posb;
+	int			posA;
 	
-	temp = (*lst_a);
-	if (count_lst((*lst_b)) > 4)
-		rotateb = taclosesposition(lst_a, lst_b, counter_a);
-	counter = talowerchecker((*lst_a), (*lst_b)->pos);
-	nbr = talowerfinder((*lst_a), (*lst_b)->pos);
-	if (rotateb == 0)
-		return (choose_rotate\
-		(tacountnbrposition(*lst_a, nbr), counter_a));
-	// if (counter > 0)
-	// {
-	// 	if (get_last(*lst_a)->pos != nbr)
-	// 		return (choose_rotate\
-	// 		(backtoacountnbrposition(*lst_a, nbr), counter_a));
-	// }
-	// else
-	// {
-	// 	if (!check_order(*lst_a))
-	// 		return (choose_rotate(findlowestbeforerotate(*lst_a), counter_a));
-	// }
-	return (10);
+	posA = 0;
+	if (posb == 0)
+	{
+		temp = (*lst_b);
+		if (count_lst((*lst_b)) > 3)
+			temp = tacloses(lst_b, taclosesposition(lst_a, lst_b, counter_a));
+		else if (count_lst(*lst_b) > 1 && (!check_order_b(*lst_b)))
+			return (b3(*lst_b));
+		if (temp->pos != (*lst_b)->pos)
+			posb = distancetohead(tacountnbrposition((*lst_b), temp->pos), count_lst(*lst_b));
+	}
+	posb = rotatebchecker(lst_b, posb);
+	if (talowerchecker(*lst_a, temp->pos))
+	{
+		posA = tacountnbrposition(*lst_a, talowerfinder(*lst_a, temp->pos));
+		if (posA == counter_a && temp == (*lst_b))
+			return (10);
+		else if (posA > 0 && posA != counter_a)
+			return (choose_rotate2(posA, counter_a, 0));
+	}
+	else
+		if (findlowestbeforerotate(*lst_a) != 1)
+			return (choose_rotate2(findlowestbeforerotate(*lst_a), counter_a, 0));
+		else
+			return (10);
+	return (0);
 }
 
-t_list	*tacloses(t_list **lst_b, int counter)
-{
-	if (counter == -1)
-		return (get_last(*lst_b));
-	else if (counter == 1)
-		return ((*lst_b)->next);
-	else if (counter == 2)
-		return ((*lst_b)->next->next);
-	else if (counter == 3)
-		return ((*lst_b)->next->next->next);
-	else return ((*lst_b));
+// t_list	*tacloses(t_list **lst_b, int counter)
+// {
+// 	if (counter == -1)
+// 		return (get_last(*lst_b));
+// 	else if (counter == 1)
+// 		return ((*lst_b)->next);
+// 	else if (counter == 2)
+// 		return ((*lst_b)->next->next);
+// 	else if (counter == 3)
+// 		return ((*lst_b)->next->next->next);
+// 	else
+// 		return ((*lst_b));
 }
 
 int	taclosesposition(t_list **lst_a, t_list **lst_b, int a)
@@ -218,29 +228,29 @@ int	taclosesposition(t_list **lst_a, t_list **lst_b, int a)
 		get_last((*lst_b))->pos)) + 1;
 	else
 		count4 = findlowestbeforerotate(*lst_a) + 1;
-	return (tabesttomove(choose_rotate2(count1, a, 1),choose_rotate2(count2, a, 1),\
-	choose_rotate2(count3, a, 1), choose_rotate2(count4, a, 1)));
+	// return (tabesttomove(choose_rotate2(count1, a, 1),choose_rotate2(count2, a, 1),\
+	// choose_rotate2(count3, a, 1), choose_rotate2(count4, a, 1)));
 }
 
-int	tabesttomove(int count1, int count2, int count3, int count4)
-{
-	if (count1 > 0 && count1 < count2 && count1 < count3 && count1 < count4)
-		return (0);
-	if (count2 > 0 && count2 < count1 && count2 < count3 && count2 < count4)
-		return (1);
-	if (count3 > 0 && count3 < count2 && count3 < count1 && count3 < count4)
-		return (2);
-	if (count4 > 0 && count4 < count2 && count4 < count1 && count4 < count3)
-		return (-1);
-	else
-		return (0);
+// int	tabesttomove(int count1, int count2, int count3, int count4)
+// {
+// 	if (count1 >= 0 && count1 < count2 && count1 < count3 && count1 < count4)
+// 		return (0);
+// 	if (count2 >= 0 && count2 < count1 && count2 < count3 && count2 < count4)
+// 		return (1);
+// 	if (count3 >= 0 && count3 < count2 && count3 < count1 && count3 < count4)
+// 		return (2);
+// 	if (count4 >= 0 && count4 < count2 && count4 < count1 && count4 < count3)
+// 		return (-1);
+// 	else
+// 		return (0);
 }
 
 int	tacountnbrposition(t_list *lst_a, int nbr)
 {
 	int	counter;
 
-	counter = 0;
+	counter = 1;
 	if (nbr == 0)
 		return (-1);
 	while (lst_a->pos != nbr)

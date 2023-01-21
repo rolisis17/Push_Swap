@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 17:20:01 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/19 18:14:29 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:20:01 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@ void	algo1(t_list **lst_a, t_list **lst_b)
 	int	poss;
 
 	last_a = *lst_a;
+	while (last_a)
+	{
+		poss = last_a->pos;
+		last_a = last_a->next;
+	}
+	last_a = *lst_b;
 	while (last_a)
 	{
 		poss = last_a->pos;
@@ -60,13 +66,13 @@ void algo2(t_list **lst_a, t_list **lst_b, int counter_a, int counter_b)
 	}
 	else if (counter < 501)
 	{
-		if (counter_a == 3 && laststep == 0)
+		if (laststep == 0 && (counter_a == 3  || check_order(*lst_a)))
 		{
 			while (!check_order(*lst_a))
 				check_swap(lst_a, lst_b, lessthanthree(*lst_a));
 			laststep = 1;
 		}
-		res = morethansix(lst_a, lst_b, counter_a, counter_b, laststep);
+		res = morethansix(lst_a, lst_b, laststep);
 		if (res % 2 == 0)
 			check_swap(lst_b, lst_a, res);
 		else

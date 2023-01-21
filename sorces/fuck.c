@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 17:54:27 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/20 12:48:55 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/21 20:45:34 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void	*ft_mallox(size_t nmemb, size_t size)
 
 int	choose_rotate(int pos, int counter_a)
 {
+	// if (pos == 0)
+	// 	return
 	if (pos < (counter_a/2))
 		return (5);
 	else
@@ -40,7 +42,7 @@ int	choose_rotate2(int pos, int counter_a, int lock)
 	int	negative;
 
 	negative = 0;
-	if ( pos >= (counter_a/2))
+	if (pos > (counter_a/2))
 	{
 		pos = counter_a - pos;
 		negative = 1;
@@ -53,6 +55,13 @@ int	choose_rotate2(int pos, int counter_a, int lock)
 		return (7);
 	else
 		return (0);
+}
+
+int	distancetohead(int pos, int counter)
+{
+	if (pos > (counter/2))
+		pos = pos - counter;
+	return (pos);
 }
 
 int	findlowestbeforerotate(t_list *lst)

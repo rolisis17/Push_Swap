@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 16:14:03 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/19 19:56:23 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:19:41 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,13 @@ int	lessthanseven(t_list *lst_a, int counter_a, int counter)
 	return (0);
 }
 
-int	morethansix(t_list **lst_a, t_list **lst_b, int counter_a, int counter_b, int laststep)
+int	morethansix(t_list **lst_a, t_list **lst_b, int laststep)
 {
+	int counter_a;
+	int	counter_b;
+
+	counter_a = count_lst(*lst_a);
+	counter_b = count_lst(*lst_b);
 	if (laststep == 1)
 	{
 		if (*lst_b)
