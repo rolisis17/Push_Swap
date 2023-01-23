@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 16:14:03 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/21 18:19:41 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/23 19:07:26 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ int	morethansix(t_list **lst_a, t_list **lst_b, int laststep)
 	int	counter_b;
 
 	counter_a = count_lst(*lst_a);
-	counter_b = count_lst(*lst_b);
+	counter_b = count_lst(*lst_b                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          );
 	if (laststep == 1)
 	{
 		if (*lst_b)
@@ -105,9 +105,7 @@ int	morethansix(t_list **lst_a, t_list **lst_b, int laststep)
 		else
 			return (upto100partiv(*(lst_a), counter_a));
 	}
-	else if (check_stacks(*(lst_a), counter_a + counter_b))
-		return (upto100parti((*lst_a), (*lst_b), counter_a + counter_b));
-	else if (counter_a > 3)
-		return (upto100partii(*(lst_a), *(lst_b)));
+	else if (counter_a > 3 && !check_order(*lst_a))
+		return (upto100parti(lst_a, lst_b, counter_a + counter_b));
 	return (0);
 }

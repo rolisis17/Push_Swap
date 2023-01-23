@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 16:08:58 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/21 20:46:01 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/23 21:03:37 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,13 +100,11 @@ int		lessthanthree(t_list *lst_a);
 
 int		b3(t_list *lst_b);
 
-int		upto100parti(t_list *lst_a, t_list *lst_b, int counter);
+int		upto100parti(t_list **lst_a, t_list **lst_b, int counter);
 
 int		upto100partia(t_list *lst, int counter);
 
-int		upto100partib(t_list *lst);
-
-int		upto100partib(t_list *lst);
+int		upto100partib(t_list *lst, int counter);
 
 int		upto100partii(t_list *lst, t_list *lst_b);
 
@@ -115,6 +113,12 @@ int		upto100partiia(t_list *lst, int counter);
 int		upto100partiib(t_list *lst);
 
 int		upto100partiii(t_list **lst_a, t_list **lst_b, int counter_a);
+
+int		chunkdiv(int counter_a, int check);
+
+int		change_div(t_list *lst_a, int counter);
+
+int		rotatebchecker(t_list **lst_b, int pos);
 
 int		tabesttomove(int count1, int count2, int count3, int count4);
 
