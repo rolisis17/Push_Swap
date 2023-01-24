@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 16:08:58 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/23 21:03:37 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/24 13:52:22 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,7 @@ int		change_div(t_list *lst_a, int counter);
 
 int		rotatebchecker(t_list **lst_b, int pos);
 
-int		tabesttomove(int count1, int count2, int count3, int count4);
+int		tabesttomove(int count1, int count2, int count3);
 
 int		talowerchecker(t_list *lst_a, int pos);
 
@@ -132,9 +132,7 @@ int		taclosesposition(t_list **lst_a, t_list **lst_b, int a);
 
 int		distancetohead(int pos, int counter);
 
-t_list	*tacloses(t_list **lst_b, int counter);
-
-int		tabesttomove(int count1, int count2, int count3, int count4);
+void	taclosest(t_list **lst_b, int counter);
 
 int		upto100partiv(t_list *lst_a, int counter);
 
