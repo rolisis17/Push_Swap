@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PushSwap.c                                         :+:      :+:    :+:   */
+/*   pushswap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 12:14:05 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/21 16:34:16 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/24 20:45:35 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,14 @@ int	main(int ac, char **av)
 		if (is_nbr(av) == 0)
 			error = error_printer();
 		if (!(extract_number(&lst_a, av)))
-			error = error_printer(); 
+			error = error_printer();
 		put_pos(lst_a);
 		if (check_doubles(lst_a) == 0)
 			error = error_printer();
-		//print_lst(lst_a, lst_b);
-		while ((!(check_order(lst_a)) || check_order(lst_b) != 3) && (error == 0))
+		while ((!(check_order(lst_a)) || check_order(lst_b) != 3) \
+		&& (error == 0))
 			algo1(&lst_a, &lst_b);
 		check_swap(NULL, NULL, -1);
-		//print_lst(lst_a, lst_b);
 	}
 	free_lst(lst_a);
 	return (0);
@@ -44,13 +43,11 @@ int	main(int ac, char **av)
 
 int	extract_number(t_list **lst, char **av)
 {
-	int		f;
-	int		u;
-	int		sign;
-	long	res;
+	static int	f;
+	static int	u;
+	int			sign;
+	long		res;
 
-	f = 0;
-	u = 0;
 	sign = 1;
 	res = 0;
 	while (av[++f])
@@ -93,9 +90,6 @@ void	new_node(t_list **lst, int nbr)
 	}
 	else
 		*lst = new;
-	//printf("next content: %d\n", new->content);
-	//if (last != NULL)
-	//	printf("previous cont: %d\n", last->content);
 }
 
 void	free_lst(t_list *lst)

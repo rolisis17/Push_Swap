@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 16:08:58 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/24 13:52:22 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/24 19:55:10 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,6 @@ void	put_pos(t_list *lst);
 
 int		extract_number(t_list **lst, char **av);
 
-void	*ft_mallox(size_t nmemb, size_t size);
-
 void	new_node(t_list **lst, int nbr);
 
 void	print_lst(t_list *lst_a, t_list *lst_b);
@@ -106,12 +104,6 @@ int		upto100partia(t_list *lst, int counter);
 
 int		upto100partib(t_list *lst, int counter);
 
-int		upto100partii(t_list *lst, t_list *lst_b);
-
-int		upto100partiia(t_list *lst, int counter);
-
-int		upto100partiib(t_list *lst);
-
 int		upto100partiii(t_list **lst_a, t_list **lst_b, int counter_a);
 
 int		chunkdiv(int counter_a, int check);
@@ -129,8 +121,6 @@ int		talowerfinder(t_list *lst_a, int pos);
 int		tacountnbrposition(t_list *lst_a, int nbr);
 
 int		taclosesposition(t_list **lst_a, t_list **lst_b, int a);
-
-int		distancetohead(int pos, int counter);
 
 void	taclosest(t_list **lst_b, int counter);
 

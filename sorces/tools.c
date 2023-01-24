@@ -1,40 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fuck.c                                             :+:      :+:    :+:   */
+/*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 17:54:27 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/21 20:45:34 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/24 19:51:04 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/header.h"
 
-void	*ft_mallox(size_t nmemb, size_t size)
-{
-	void	*nmembp;
-	size_t	f;
-
-	f = -1;
-	nmembp = (void *) malloc(nmemb * size);
-	if (!nmembp)
-		return (NULL);
-	while (++f < nmemb * size)
-		((unsigned char *)nmembp)[f] = 0;
-	return (nmembp);
-}
-
 int	choose_rotate(int pos, int counter_a)
 {
-	// if (pos == 0)
-	// 	return
-	if (pos < (counter_a/2))
+	if (pos < (counter_a / 2))
 		return (5);
 	else
 		return (7);
-	
 }
 
 int	choose_rotate2(int pos, int counter_a, int lock)
@@ -42,7 +25,7 @@ int	choose_rotate2(int pos, int counter_a, int lock)
 	int	negative;
 
 	negative = 0;
-	if (pos > (counter_a/2))
+	if (pos > (counter_a / 2))
 	{
 		pos = counter_a - pos;
 		negative = 1;
@@ -55,13 +38,6 @@ int	choose_rotate2(int pos, int counter_a, int lock)
 		return (7);
 	else
 		return (0);
-}
-
-int	distancetohead(int pos, int counter)
-{
-	if (pos > (counter/2))
-		pos = pos - counter;
-	return (pos);
 }
 
 int	findlowestbeforerotate(t_list *lst)

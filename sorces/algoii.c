@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 16:14:03 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/23 19:07:26 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/24 20:49:58 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int	lessthanthree(t_list *lst_a)
 {
-	int bigger;
+	int	bigger;
 
 	bigger = check_bigger(lst_a, NULL);
 	if (bigger == 2)
 	{
 		if (get_last(lst_a)->content < (lst_a)->content)
 			return (5);
-		else 
+		else
 			return (3);
 	}
 	else if (bigger != 2)
@@ -37,7 +37,7 @@ int	lessthanthree(t_list *lst_a)
 int	b3(t_list *lst_b)
 {
 	int	counter_b;
-	int bigger;
+	int	bigger;
 
 	counter_b = count_lst(lst_b);
 	bigger = check_bigger(lst_b, NULL);
@@ -47,7 +47,7 @@ int	b3(t_list *lst_b)
 		{
 			if (get_last(lst_b)->content > (lst_b)->content)
 				return (8);
-			else 
+			else
 				return (4);
 		}
 		else if (bigger != 2)
@@ -63,28 +63,19 @@ int	b3(t_list *lst_b)
 
 int	lessthanseven(t_list *lst_a, int counter_a, int counter)
 {
-	t_list	*temp;
-	int	pos;
-
-	temp = lst_a;
-	while (temp)
-	{
-		pos = temp->pos;
-		temp = temp->next;
-	};
 	if (counter_a == 6)
 	{
-		if (lst_a->pos <= (counter/2))
+		if (lst_a->pos <= (counter / 2))
 			return (9);
-		else if (lst_a->pos > (counter/2))
+		else if (lst_a->pos > (counter / 2))
 			return (7);
 	}
 	else
 	{
-		if (lst_a->pos <= (counter/2))
+		if (lst_a->pos <= (counter / 2))
 			return (9);
-		else if (lst_a->next->pos <= (counter/2))
-			return(3);
+		else if (lst_a->next->pos <= (counter / 2))
+			return (3);
 		else
 			return (7);
 	}
@@ -93,11 +84,11 @@ int	lessthanseven(t_list *lst_a, int counter_a, int counter)
 
 int	morethansix(t_list **lst_a, t_list **lst_b, int laststep)
 {
-	int counter_a;
+	int	counter_a;
 	int	counter_b;
 
 	counter_a = count_lst(*lst_a);
-	counter_b = count_lst(*lst_b                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          );
+	counter_b = count_lst(*lst_b);
 	if (laststep == 1)
 	{
 		if (*lst_b)

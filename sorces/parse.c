@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 12:10:10 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/19 15:33:20 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/24 19:41:30 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,7 @@ int	is_nbr(char **str)
 		while (str[starter.f][++starter.u])
 			if ((str[starter.f][starter.u] < 48) \
 			|| (str[starter.f][starter.u] > 57))
-			{
 				return (0);
-				
-			}
 		starter.u = -1;
 	}
 	return (1);

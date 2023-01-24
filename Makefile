@@ -1,11 +1,12 @@
-SRCS_FILES = PushSwap.c Parse.c fuck.c Swap.c CheckSwap.c Printlst.c algo.c \
-algoii.c check_algo.c 100.c #CheckSwap.c
+SRCS_FILES = pushswap.c parse.c tools.c swap.c checkswap.c printlst.c algo.c \
+algoii.c check_algo.c 100.c 100part2.c 100part3.c #CheckSwap.c
 SRCS = $(addprefix $(SRCS_PATH), $(SRCS_FILES))
 SRCS_PATH = ./sorces/
 CC = cc
 NAME = push_swap
-CFLAGS = -g -Wall -Wextra -Werror #-fsanitize=address
+CFLAGS = -g -Wall -Wextra -Werror -fsanitize=address
 RM = rm -rf
+BONUS = $(addprefix ./bonus/, $(BONUS)) bonus.c
 
 # Reset
 Color_Off=\033[0m
