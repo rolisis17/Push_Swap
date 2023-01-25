@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 14:09:47 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/24 19:47:11 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/25 12:22:16 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	upto100partib(t_list *lst, int counter)
 	int	div;
 
 	div = chunkdiv(0, 2);
-	if (lst->pos >= counter - div)
+	if (lst->pos <= counter / 2)
 		return (6);
 	return (0);
 }
@@ -47,13 +47,13 @@ int	upto100partia(t_list *lst_a, int counter)
 	div = change_div(lst_a, counter);
 	if (!check)
 	{
-		if ((get_last(lst_a)->pos <= (div)) || \
-		(get_last(lst_a)->pos >= counter - (div)))
+		if ((get_last(lst_a)->pos >= (counter / 2 + div)) && \
+		(get_last(lst_a)->pos <= counter - (div)))
 			return (7);
 		else
 			check = 1;
 	}
-	if ((lst_a->pos <= div) || (lst_a->pos >= counter - div))
+	if (((lst_a)->pos >= (counter / 2 - div)) && ((lst_a)->pos <= (counter / 2 + (div))))
 		return (9);
 	return (5);
 }

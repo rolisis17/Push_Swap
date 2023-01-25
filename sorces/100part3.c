@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 14:10:47 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/24 19:32:05 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/25 12:59:31 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,7 @@ int	chunkdiv(int counter_a, int check)
 		div = full / 3;
 	if (check == 1)
 		div += counter_a / 3;
+	if (counter_a > 100)
+		return (div / 3);
 	return (div / 2);
 }

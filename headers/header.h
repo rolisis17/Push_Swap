@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 16:08:58 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/24 19:55:10 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/25 17:20:02 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <stdio.h>
 # include <stddef.h>
 # include <limits.h>
-# include <math.h>
 
 typedef struct s_list
 {

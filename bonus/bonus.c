@@ -6,42 +6,60 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 19:21:19 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/24 20:52:54 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/25 18:40:38 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include "../headers/header.h"
+#include "header_bonus.h"
 
 int	main(int ac, char **av)
 {
 	t_list	*lst_a;
 	t_list	*lst_b;
+	char	*move;
 	int		error;
-
+	
+	error = 0;
 	lst_a = NULL;
 	lst_b = NULL;
-	error = 0;
-	if (ac > 1)
+	move = NULL;
+	error = make_list(ac, av, &lst_a);
+	while (move && !(error) && (lst_a))
 	{
-		if (is_nbr(av) == 0)
-			error = error_printer();
-		if (!(extract_number(&lst_a, av)))
-			error = error_printer();
-		put_pos(lst_a);
-		if (check_doubles(lst_a) == 0)
-			error = error_printer();
-		while ((!(check_order(lst_a)) || check_order(lst_b) != 3) \
-		&& (error == 0))
-			algo1(&lst_a, &lst_b);
-		check_swap(NULL, NULL, -1);
+		move = get_next_line(0);
+		do_swap(move, &lst_a, &lst_b);
+		if (move)
+			free(move);
 	}
-	free_lst(lst_a);
+	if ((lst_a) && check_order_bonus(lst_a) && !(lst_b) && !(error))
+		write (1, "OK\n", 3);
+	else
+		write (1, "KO\n", 3);
+	free_lst_bonus(lst_a);
+	if (move)
+		free (move);
 	return (0);
 }
 
-int	extract_number(t_list **lst, char **av)
+int	make_list(int ac, char **av, t_list **lst_a)
+{
+	int		error;
+	
+	error = 0;
+	if (ac > 1)
+	{
+		if (is_nbr_bonus(av) == 0)
+			error = error_printer();
+		if (!(extract_number_bonus(lst_a, av)))
+			error = error_printer();
+		put_pos_bonus(lst_a);
+		if (check_doubles_bonus(*lst_a) == 0)
+			error = error_printer();
+	}
+	return (error);
+}
+
+int	extract_number_bonus(t_list **lst, char **av)
 {
 	static int	f;
 	static int	u;
@@ -61,9 +79,9 @@ int	extract_number(t_list **lst, char **av)
 			}
 			res = res * 10 + (av[f][u++] - 48);
 		}
-		if (!(check_intmax(res)))
+		if (!(check_intmax_bonus(res)))
 			return (0);
-		new_node(lst, res * sign);
+		new_node_bonus(lst, res * sign);
 		u = 0;
 		res = 0;
 		sign = 1;
@@ -71,7 +89,7 @@ int	extract_number(t_list **lst, char **av)
 	return (1);
 }
 
-void	new_node(t_list **lst, int nbr)
+void	new_node_bonus(t_list **lst, int nbr)
 {
 	t_list	*new;
 	t_list	*last;
@@ -84,7 +102,7 @@ void	new_node(t_list **lst, int nbr)
 	new->next = NULL;
 	if (*lst != NULL)
 	{
-		last = get_last(*lst);
+		last = get_last_bonus(*lst);
 		new->prev = last;
 		last->next = new;
 	}
@@ -92,7 +110,7 @@ void	new_node(t_list **lst, int nbr)
 		*lst = new;
 }
 
-void	free_lst(t_list *lst)
+void	free_lst_bonus(t_list *lst)
 {
 	t_list	*to_del;
 

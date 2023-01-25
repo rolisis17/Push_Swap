@@ -1,12 +1,16 @@
 SRCS_FILES = pushswap.c parse.c tools.c swap.c checkswap.c printlst.c algo.c \
-algoii.c check_algo.c 100.c 100part2.c 100part3.c #CheckSwap.c
+algoii.c check_algo.c 100.c 100part2.c 100part3.c
 SRCS = $(addprefix $(SRCS_PATH), $(SRCS_FILES))
 SRCS_PATH = ./sorces/
 CC = cc
 NAME = push_swap
 CFLAGS = -g -Wall -Wextra -Werror -fsanitize=address
 RM = rm -rf
-BONUS = $(addprefix ./bonus/, $(BONUS)) bonus.c
+BONUS_PATH = ./bonus/
+BONUS_FILES = bonus.c checkswap_bonus.c parse_bonus.c swap_bonus.c \
+gnl/get_next_line.c gnl/get_next_line_utils.c
+BONUS = $(addprefix $(BONUS_PATH), $(BONUS_FILES))
+CHECKER = checker
 
 # Reset
 Color_Off=\033[0m
@@ -81,10 +85,9 @@ On_IPurple= \033[0;105m
 On_ICyan= \033[0;106m
 On_IWhite= \033[0;107m
 
-all: $(NAME)
 
 $(NAME): $(SRCS)
-	@$(CC) $(CFLAGS) $(SRCS) -I headers -o $(NAME)
+	@$(CC) $(CFLAGS) $(SRCS) -I headers/ -I gnl/ -o $(NAME)
 	@echo "    $(On_IWhite)$(BBlue)o------o$(Color_Off) $(On_IWhite)$(BBlue)o------o$(Color_Off) $(On_IWhite)$(BBlue)o------o$(Color_Off) $(On_IWhite)$(BBlue)o------o$(Color_Off) $(On_IWhite)$(BBlue)o------o$(Color_Off) $(On_IWhite)$(BBlue)o------o$(Color_Off) $(On_IWhite)$(BBlue)o------o$(Color_Off) $(On_IWhite)$(BBlue)o------o$(Color_Off)"
 	@echo "    $(On_IWhite)$(BBlue)|$(BRed)P$(Color_Off)$(On_IWhite)$(BBlue).--. |$(Color_Off) $(On_IWhite)$(BBlue)|$(BRed)U$(Color_Off)$(On_IWhite)$(BBlue).--. |$(Color_Off) $(On_IWhite)$(BBlue)|$(BRed)S$(Color_Off)$(On_IWhite)$(BBlue).--. |$(Color_Off) $(On_IWhite)$(BBlue)|$(BRed)H$(Color_Off)$(On_IWhite)$(BBlue).--. |$(Color_Off) $(On_IWhite)$(BBlue)|$(BRed)S$(Color_Off)$(On_IWhite)$(BBlue).--. |$(Color_Off) $(On_IWhite)$(BBlue)|$(BRed)W$(Color_Off)$(On_IWhite)$(BBlue).--. |$(Color_Off) $(On_IWhite)$(BBlue)|$(BRed)A$(Color_Off)$(On_IWhite)$(BBlue).--. |$(Color_Off) $(On_IWhite)$(BBlue)|$(BRed)P$(Color_Off)$(On_IWhite)$(BBlue).--. |$(Color_Off)"
 	@echo "    $(On_IWhite)$(BBlue)| :/\: |$(Color_Off) $(On_IWhite)$(BBlue)| (\/) |$(Color_Off) $(On_IWhite)$(BBlue)| :/\: |$(Color_Off) $(On_IWhite)$(BBlue)| :/\: |$(Color_Off) $(On_IWhite)$(BBlue)| :/\: |$(Color_Off) $(On_IWhite)$(BBlue)| :/\: |$(Color_Off) $(On_IWhite)$(BBlue)| (\/) |$(Color_Off) $(On_IWhite)$(BBlue)| :/\: |$(Color_Off)"
@@ -93,6 +96,10 @@ $(NAME): $(SRCS)
 	@echo "    $(On_IWhite)$(BBlue)o------o$(Color_Off) $(On_IWhite)$(BBlue)o------o$(Color_Off) $(On_IWhite)$(BBlue)o------o$(Color_Off) $(On_IWhite)$(BBlue)o------o$(Color_Off) $(On_IWhite)$(BBlue)o------o$(Color_Off) $(On_IWhite)$(BBlue)o------o$(Color_Off) $(On_IWhite)$(BBlue)o------o$(Color_Off) $(On_IWhite)$(BBlue)o------o$(Color_Off)"
 	@echo "$(BRed)		Compliation failed? I dont think so."
 
+all: $(NAME)
+
+bonus: $(BONUS)
+	@$(CC) $(CFLAGS) $(BONUS) -o $(CHECKER)
 
 clean:
 	@$(RM) $(NAME)

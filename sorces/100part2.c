@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 14:09:47 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/24 20:51:50 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/25 11:58:40 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	change_div(t_list *lst_a, int counter)
 		div = chunkdiv(count_a, 0);
 	while (lst_a)
 	{
-		if (((lst_a)->pos <= (div)) || ((lst_a)->pos >= (counter - (div))))
+		if (((lst_a)->pos >= (counter / 2 - div)) && ((lst_a)->pos <= (counter / 2 + (div))))
 			return (div);
 		lst_a = lst_a->next;
 	}
