@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 17:20:01 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/24 19:40:41 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/26 14:24:43 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	algo2(t_list **lst_a, t_list **lst_b, int counter_a, int counter_b)
 	res = 0;
 	if (counter_a > 3 && counter < 7)
 		check_swap(lst_a, lst_b, lessthanseven(*lst_a, counter_a, counter));
-	else if (counter < 501)
+	else if (counter < 1000)
 	{
 		if (laststep == 0 && (counter_a == 3 || check_order(*lst_a)))
 		{

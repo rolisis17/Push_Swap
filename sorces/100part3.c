@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 14:10:47 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/25 12:59:31 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/26 16:53:12 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,18 +55,20 @@ int	talowerfinder(t_list *lst_a, int pos)
 	return (nbr);
 }
 
-int	chunkdiv(int counter_a, int check)
+int	rotatebchecker(t_list **lst_b, int pos)
 {
-	static int	full;
-	static int	div;
-
-	if (!check)
-		full = counter_a;
-	if (check == 0)
-		div = full / 3;
-	if (check == 1)
-		div += counter_a / 3;
-	if (counter_a > 100)
-		return (div / 3);
-	return (div / 2);
+	if (pos != 0)
+	{
+		if (pos < 0)
+		{
+			check_swap(lst_b, NULL, 8);
+			return (pos + 1);
+		}
+		else
+		{
+			check_swap(lst_b, NULL, 6);
+			return (pos - 1);
+		}
+	}
+	return (0);
 }
