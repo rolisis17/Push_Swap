@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 16:08:58 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/25 17:20:02 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/28 14:45:57 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,10 @@ int		check_lowest(t_list *lst_b, t_list *lst_a);
 int		count_lst(t_list *lst);
 
 int		check_pos(t_list *lst_b, t_list *lst_a);
+
+int		check_ra_rra(int keep, int swap);
+
+int		check_pa_pb(int keep, int swap);
 
 int		findlowestbeforerotate(t_list *lst);
 

@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 17:46:13 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/28 12:31:17 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/28 15:51:57 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,12 @@ static int	to_printii(int keep, int swap)
 		if ((keep == 7 || keep == 8) && swap != keep)
 			return (write(1, "rrr\n", 4) - 4);
 		else
-			show_mov(keep);
+			return (check_ra_rra(keep, swap));
 		keep = swap;
 		return (keep);
 	}
 	else if (swap == 9 || swap == 10)
-	{
-		show_mov(keep);
-		keep = swap;
-		return (keep);
-	}
+		return (check_pa_pb(keep, swap));
 	return (0);
 }
 
@@ -38,9 +34,13 @@ int	to_print(int keep, int swap)
 	{
 		if ((keep == 3 || keep == 4) && swap != keep)
 			return (write(1, "ss\n", 3) - 3);
-		else
+		else if (keep != swap)
+		{
 			show_mov(keep);
-		keep = swap;
+			keep = swap;
+		}
+		else
+			keep = 0;
 		return (keep);
 	}
 	else if (swap == 5 || swap == 6)
@@ -48,13 +48,35 @@ int	to_print(int keep, int swap)
 		if ((keep == 5 || keep == 6) && swap != keep)
 			return (write(1, "rr\n", 3) - 3);
 		else
-			show_mov(keep);
-		keep = swap;
-		return (keep);
+			return (check_ra_rra(keep, swap));
 	}
-	else if (swap > 6)
+	else
 		return (to_printii(keep, swap));
-	return (0);
+}
+
+int	check_pa_pb(int keep, int swap)
+{
+	if (swap == 9)
+	{
+		if (keep != swap + 1)
+		{
+			show_mov(keep);
+			keep = swap;
+		}
+		else
+			keep = 0;
+	}
+	if (swap == 10)
+	{
+		if (keep != swap - 1)
+		{
+			show_mov(keep);
+			keep = swap;
+		}
+		else
+			keep = 0;
+	}
+	return (keep);
 }
 
 void	show_mov(int keep)

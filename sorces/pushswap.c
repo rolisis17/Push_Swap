@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 12:14:05 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/28 12:31:33 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/28 13:57:04 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,9 @@ int	extract_number(t_list **lst, char **av)
 	static int	f;
 	static int	u;
 	int			sign;
-	long		res;
+	static long	res;
 
 	sign = 1;
-	res = 0;
 	while (av[++f])
 	{
 		while (av[f][u])

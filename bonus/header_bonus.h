@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:14:03 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/25 18:06:27 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/28 14:16:19 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,7 @@ int		check_intmax_bonus(long nbr);
 int		error_printer(void);
 
 void	put_pos_bonus(t_list **lst);
+
+void	print_ok(t_list **lst_a, t_list **lst_b);
 
 #endif

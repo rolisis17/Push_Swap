@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 14:09:47 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/28 12:32:22 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/28 13:58:08 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	change_div(t_list *lst_a, int counter)
 	return (chunkdiv(count_a, 1));
 }
 
-
 int	chunkdiv(int counter_a, int check)
 {
 	static int	full;
@@ -41,7 +40,7 @@ int	chunkdiv(int counter_a, int check)
 		full = counter_a;
 	if (check == 0)
 	{
-		if(full > 100)
+		if (full > 100)
 			div = full / 5;
 		else
 			div = full / 3;
@@ -60,7 +59,7 @@ int	upto100partib(t_list *lst, int counter)
 {
 	static int	div;
 	static int	olddiv;
-	
+
 	if (div < chunkdiv(counter, 2))
 	{
 		if (div > olddiv)

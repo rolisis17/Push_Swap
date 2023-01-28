@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 16:38:49 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/28 12:32:46 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/28 15:52:24 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,4 +102,12 @@ void	swap_ab_bonus(t_list **from, t_list **to)
 		(*to)->prev = lasthead;
 	}
 	(*to) = lasthead;
+}
+
+void	print_ok(t_list **lst_a, t_list **lst_b)
+{
+	if (check_order_bonus(*lst_a) && !(*lst_b))
+		write (1, "OK\n", 3);
+	else
+		write (1, "KO\n", 3);
 }

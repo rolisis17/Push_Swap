@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 16:38:49 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/28 12:31:09 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/28 15:52:01 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,4 +102,29 @@ void	swap_ab(t_list **from, t_list **to)
 		(*to)->prev = lasthead;
 	}
 	(*to) = lasthead;
+}
+
+int	check_ra_rra(int keep, int swap)
+{
+	if (swap == 5 || swap == 6)
+	{
+		if (keep != swap + 2)
+		{
+			show_mov(keep);
+			keep = swap;
+		}
+		else
+			keep = 0;
+	}
+	if (swap == 7 || swap == 8)
+	{
+		if (keep != swap - 2)
+		{
+			show_mov(keep);
+			keep = swap;
+		}
+		else
+			keep = 0;
+	}
+	return (keep);
 }

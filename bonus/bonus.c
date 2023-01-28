@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 19:21:19 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/28 13:13:49 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/28 14:17:14 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int ac, char **av)
 	t_list	*lst_b;
 	char	*move;
 	int		error;
-	
+
 	error = 0;
 	lst_a = NULL;
 	lst_b = NULL;
@@ -31,10 +31,8 @@ int	main(int ac, char **av)
 			free(move);
 		move = get_next_line(0);
 	}
-	if (check_order_bonus(lst_a))
-		write (1, "OK\n", 3);
-	else
-		write (1, "KO\n", 3);
+	if (lst_a)
+		print_ok(&lst_a, &lst_b);
 	free_lst_bonus(lst_a);
 	if (move)
 		free (move);
@@ -44,7 +42,7 @@ int	main(int ac, char **av)
 int	make_list(int ac, char **av, t_list **lst_a)
 {
 	int		error;
-	
+
 	error = 0;
 	if (ac > 1)
 	{
@@ -64,10 +62,9 @@ int	extract_number_bonus(t_list **lst, char **av)
 	static int	f;
 	static int	u;
 	int			sign;
-	long		res;
+	static long	res;
 
 	sign = 1;
-	res = 0;
 	while (av[++f])
 	{
 		while (av[f][u])
