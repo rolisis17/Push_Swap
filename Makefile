@@ -97,8 +97,10 @@ $(NAME): $(SRCS)
 
 all: $(NAME)
 
-bonus: $(BONUS)
+$(CHECKER): $(BONUS)
 	@$(CC) $(CFLAGS) $(BONUS) -o $(CHECKER)
+
+bonus: $(CHECKER)
 
 clean:
 	@$(RM) $(NAME)
@@ -107,4 +109,6 @@ fclean: clean
 	@$(RM) $(CHECKER)
 	@echo "    $(BGreen)ALL CLEAN !!$(Color_Off)"
 
-re: fclean all
+re: clean all
+
+rebonus: fclean all bonus
