@@ -6,11 +6,11 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/30 17:54:27 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/24 19:51:04 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/28 12:31:02 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/header.h"
+#include "header.h"
 
 int	choose_rotate(int pos, int counter_a)
 {

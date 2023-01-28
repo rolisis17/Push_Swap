@@ -6,11 +6,11 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 14:10:47 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/26 16:53:12 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/28 12:32:14 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/header.h"
+#include "header.h"
 
 int	tacountnbrposition(t_list *lst_a, int nbr)
 {

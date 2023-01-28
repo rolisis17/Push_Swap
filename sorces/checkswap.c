@@ -6,11 +6,11 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:21:41 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/24 20:45:19 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/28 12:31:50 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/header.h"
+#include "header.h"
 
 static int	check_swapii(t_list **lst_a, t_list **lst_b, int swap, int keep)
 {

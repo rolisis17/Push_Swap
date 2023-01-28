@@ -6,13 +6,11 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 12:14:05 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/24 20:45:35 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/28 12:31:33 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include "../headers/header.h"
+#include "header.h"
 
 int	main(int ac, char **av)
 {

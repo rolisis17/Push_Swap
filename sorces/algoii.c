@@ -6,11 +6,11 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 16:14:03 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/24 20:49:58 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/28 12:32:01 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/header.h"
+#include "header.h"
 
 int	lessthanthree(t_list *lst_a)
 {

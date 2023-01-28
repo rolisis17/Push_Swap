@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 19:21:19 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/25 18:40:38 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/28 13:13:49 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,16 @@ int	main(int ac, char **av)
 	error = 0;
 	lst_a = NULL;
 	lst_b = NULL;
-	move = NULL;
+	move = get_next_line(0);
 	error = make_list(ac, av, &lst_a);
 	while (move && !(error) && (lst_a))
 	{
-		move = get_next_line(0);
 		do_swap(move, &lst_a, &lst_b);
 		if (move)
 			free(move);
+		move = get_next_line(0);
 	}
-	if ((lst_a) && check_order_bonus(lst_a) && !(lst_b) && !(error))
+	if (check_order_bonus(lst_a))
 		write (1, "OK\n", 3);
 	else
 		write (1, "KO\n", 3);

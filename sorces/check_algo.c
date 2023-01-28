@@ -6,11 +6,11 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 16:16:12 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/24 19:51:50 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/28 12:31:56 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/header.h"
+#include "header.h"
 
 int	count_lst(t_list *lst)
 {

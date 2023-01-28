@@ -6,11 +6,11 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 16:38:49 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/25 17:31:10 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/28 12:32:46 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/header.h"
+#include "header_bonus.h"
 
 /*sa (swap a): Swap the first 2 elements at the top of stack a.
 Do nothing if there is only one or no elements.
