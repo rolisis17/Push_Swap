@@ -6,14 +6,14 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:14:03 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/28 14:16:19 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/30 15:41:39 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HEADER_BONUS_H
 # define HEADER_BONUS_H
 
-# include "./gnl/get_next_line.h"
+# include "get_next_line.h"
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
