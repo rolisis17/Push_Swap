@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 14:09:47 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/28 13:58:08 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/28 20:09:48 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,18 @@ int	change_div(t_list *lst_a, int counter)
 	int	div;
 	int	count_a;
 
-	(void)counter;
 	count_a = count_lst(lst_a);
 	div = chunkdiv(count_a, 2);
 	if (!div)
 		div = chunkdiv(count_a, 0);
 	while (lst_a)
 	{
-		if ((lst_a)->pos <= (div))
+		if (((lst_a)->pos <= (div)) || ((lst_a)->pos >= (counter - (div))))
 			return (div);
 		lst_a = lst_a->next;
 	}
-	return (chunkdiv(count_a, 1));
+	div = chunkdiv(count_a, 1);
+	return (div);
 }
 
 int	chunkdiv(int counter_a, int check)
@@ -39,37 +39,19 @@ int	chunkdiv(int counter_a, int check)
 	if (!check)
 		full = counter_a;
 	if (check == 0)
-	{
-		if (full > 100)
-			div = full / 5;
-		else
-			div = full / 3;
-	}
+		div = full / 3;
 	if (check == 1)
-	{
-		if (full > 100)
-			div += counter_a / 3;
-		else
-			div += counter_a / 2;
-	}
-	return (div);
+		div += full / 4;
+	return (div / 2);
 }
 
 int	upto100partib(t_list *lst, int counter)
 {
-	static int	div;
-	static int	olddiv;
+	int	div;
 
-	if (div < chunkdiv(counter, 2))
-	{
-		if (div > olddiv)
-			olddiv = div;
-		div = chunkdiv(counter, 2);
-	}
-	if (lst->pos >= olddiv + ((div - olddiv) / 2) && lst->pos <= div)
+	div = chunkdiv(0, 2);
+	if (lst->pos >= counter / 2)
 		return (6);
-	if (lst->pos > div)
-		div += div;
 	return (0);
 }
 
@@ -81,12 +63,13 @@ int	upto100partia(t_list *lst_a, int counter)
 	div = change_div(lst_a, counter);
 	if (!check)
 	{
-		if (get_last(lst_a)->pos <= div)
+		if ((get_last(lst_a)->pos <= (div)) || \
+		(get_last(lst_a)->pos >= counter - (div)))
 			return (7);
 		else
 			check = 1;
 	}
-	if ((lst_a)->pos <= (div))
+	if ((lst_a->pos <= div) || (lst_a->pos >= counter - div))
 		return (9);
 	return (5);
 }

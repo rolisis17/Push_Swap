@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 14:09:47 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/28 12:32:31 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/01/30 15:03:49 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	upto100parti(t_list **lst_a, t_list **lst_b, int counter)
 	{
 		keep = 1;
 		counter_b = count_lst(*lst_b);
-		return (upto100partib(*lst_b, count_lst(*lst_a)));
+		return (upto100partib(*lst_b, counter));
 	}
 	else
 		keep = 0;
