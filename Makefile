@@ -8,7 +8,7 @@ CFLAGS = -g -Wall -Wextra -Werror -fsanitize=address
 RM = rm -rf
 BONUS_PATH = ./bonus/
 BONUS_FILES = bonus.c checkswap_bonus.c parse_bonus.c swap_bonus.c \
-gnl/get_next_line.c gnl/get_next_line_utils.c
+get_next_line.c get_next_line_utils.c
 BONUS = $(addprefix $(BONUS_PATH), $(BONUS_FILES))
 CHECKER = checker
 
