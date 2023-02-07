@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 19:21:19 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/28 14:17:14 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/02/07 14:28:41 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int	main(int ac, char **av)
 	error = 0;
 	lst_a = NULL;
 	lst_b = NULL;
-	move = get_next_line(0);
 	error = make_list(ac, av, &lst_a);
+	move = get_next_line(0);
 	while (move && !(error) && (lst_a))
 	{
 		do_swap(move, &lst_a, &lst_b);
@@ -31,9 +31,9 @@ int	main(int ac, char **av)
 			free(move);
 		move = get_next_line(0);
 	}
-	if (lst_a)
+	if (lst_a && !error)
 		print_ok(&lst_a, &lst_b);
-	free_lst_bonus(lst_a);
+	free_lst_bonus(lst_a, lst_b);
 	if (move)
 		free (move);
 	return (0);
@@ -107,17 +107,19 @@ void	new_node_bonus(t_list **lst, int nbr)
 		*lst = new;
 }
 
-void	free_lst_bonus(t_list *lst)
+void	free_lst_bonus(t_list *lst_a, t_list *lst_b)
 {
 	t_list	*to_del;
 
-	to_del = (lst);
-	while ((lst) != NULL)
+	to_del = (lst_a);
+	while ((lst_a) != NULL)
 	{
-		(lst) = (lst)->next;
+		(lst_a) = (lst_a)->next;
 		free (to_del);
-		to_del = (lst);
+		to_del = (lst_a);
 	}
-	free (lst);
-	(lst) = NULL;
+	free (lst_a);
+	(lst_a) = NULL;
+	if (lst_b)
+		free_lst_bonus(lst_b, NULL);
 }

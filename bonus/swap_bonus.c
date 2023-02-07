@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 16:38:49 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/28 15:52:24 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/02/07 14:36:06 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	swap_top_bonus(t_list **lst)
 	t_list	*prev;
 	int		temp;
 
+	if (!(*lst) || !(*lst)->next)
+		return ;
 	last = (*lst);
 	prev = last->next;
 	temp = last->content;
@@ -50,6 +52,8 @@ void	swap_rotate_bonus(t_list **lst)
 	t_list	*second;
 	t_list	*head;
 
+	if (!(*lst) || !(*lst)->next)
+		return ;
 	last = (*lst);
 	while (last->next != NULL)
 		last = last->next;
@@ -70,6 +74,8 @@ void	swap_reverse_bonus(t_list **lst)
 	t_list	*previous;
 	t_list	*head;
 
+	if (!(*lst) || !(*lst)->next)
+		return ;
 	last = (*lst);
 	while (last->next != NULL)
 		last = last->next;
@@ -88,6 +94,8 @@ void	swap_ab_bonus(t_list **from, t_list **to)
 	t_list	*lasthead;
 
 	lasthead = (*from);
+	if (!(*from) || !(*from)->next)
+		return ;
 	if ((*from)->next != NULL)
 	{
 		(*from) = (*from)->next;
@@ -101,7 +109,8 @@ void	swap_ab_bonus(t_list **from, t_list **to)
 		lasthead->next = (*to);
 		(*to)->prev = lasthead;
 	}
-	(*to) = lasthead;
+	else
+		(*to) = lasthead;
 }
 
 void	print_ok(t_list **lst_a, t_list **lst_b)

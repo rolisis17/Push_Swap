@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 12:10:10 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/25 18:30:04 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/02/07 13:15:41 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,6 @@ void	put_pos_bonus(t_list **lst)
 
 int	error_printer(void)
 {
-	return (write (2, "Error\n", 6));
+	write (2, "Error\n", 6);
+	exit (1);
 }

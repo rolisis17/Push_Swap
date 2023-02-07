@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:14:03 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/30 15:41:39 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/02/07 14:29:09 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-void	free_lst_bonus(t_list *lst);
+void	free_lst_bonus(t_list *lst, t_list *lst_b);
 
 void	new_node_bonus(t_list **lst, int nbr);
 

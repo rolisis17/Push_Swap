@@ -6,7 +6,7 @@
 /*   By: dcella-d <dcella-d@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 15:21:41 by dcella-d          #+#    #+#             */
-/*   Updated: 2023/01/28 14:09:16 by dcella-d         ###   ########.fr       */
+/*   Updated: 2023/02/07 13:11:09 by dcella-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,9 @@ void	show_mov_bonus(t_list **lst_a, t_list **lst_b, char *move)
 		do_swap("rrb\n", lst_a, lst_b);
 	}
 	else
+	{
 		write(1, "Error\n", 6);
+	}
 }
 	// else if (!(ft_strcmp(move, "Error\n")))
 	// 	return ;
